@@ -1,0 +1,24 @@
+{
+  "category": [
+    { "id": "1", "name": "Burger" },
+    { "id": "2", "name": "Fries" },
+    { "id": "3", "name": "Water" }
+  ],
+  "product": [
+    { "id": "1", "name": "small burger", "price": 50, "count": 0, "isCart": false, "category": "1" },
+    { "id": "2", "name": "medium burger", "price": 50, "count": 0, "isCart": false, "category": "1" },
+    { "id": "3", "name": "large burger", "price": 50, "count": 0, "isCart": false, "category": "1" },
+    { "id": "4", "name": "extra large burger", "price": 50, "count": 0, "isCart": false, "category": "1" },
+    { "id": "5", "name": "extra extra large burger", "price": 50, "count": 0, "isCart": false, "category": "1" },
+    { "id": "6", "name": "small fries", "price": 50, "count": 0, "isCart": false, "category": "2" },
+    { "id": "7", "name": "medium fries", "price": 50, "count": 0, "isCart": false, "category": "2" },
+    { "id": "8", "name": "large fries", "price": 50, "count": 0, "isCart": false, "category": "2" },
+    { "id": "9", "name": "extra large fries", "price": 50, "count": 0, "isCart": false, "category": "2" },
+    { "id": "10", "name": "extra extra large fries", "price": 50, "count": 0, "isCart": false, "category": "2" },
+    { "id": "11", "name": "small water", "price": 50, "count": 0, "isCart": false, "category": "3" },
+    { "id": "12", "name": "medium water", "price": 50, "count": 0, "isCart": false, "category": "3" },
+    { "id": "13", "name": "large water", "price": 50, "count": 0, "isCart": false, "category": "3" },
+    { "id": "14", "name": "extra large water", "price": 50, "count": 0, "isCart": false, "category": "3" },
+    { "id": "15", "name": "extra extra large water", "price": 50, "count": 0, "isCart": false, "category": "3" }
+  ]
+}
