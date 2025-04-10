@@ -5,7 +5,10 @@ export default function About() {
     <div className="text-center mt-10">
       <h1 className="text-3xl font-bold">Restaurant About</h1>
       <p className="mt-4 text-lg text-gray-600">
-        this is the about page of our Restaurant
+        Home page is for users
+      </p>
+      <p className="mt-4 text-lg text-gray-600">
+        Admin page is for admin
       </p>
     </div>
   );

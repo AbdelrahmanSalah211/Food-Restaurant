@@ -134,3 +134,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+
+lab-3/
+lab-1/
+New folder/
+.gitignore

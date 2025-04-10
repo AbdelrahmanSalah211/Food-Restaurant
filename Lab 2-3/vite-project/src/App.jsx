@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import About from "./components/About";
-import { Routes, Route } from "react-router";
 import CartCheck from "./components/CartCheck";
 import Menu from "./components/Menu";
+import Admin from "./components/Admin";
+
+import { ToastContainer } from "react-toastify";
 
 export default function App() {
   const [items, setItems] = useState([]);
@@ -85,10 +88,60 @@ export default function App() {
     setCurrentPage(page);
   };
 
+  const handleAddProduct = (product) => {
+    const itemsBeforeAdd = [...items];
+    const newItems = [...items, product];
+    setItems(newItems);
+    return itemsBeforeAdd;
+  };
+
+  const handleDeleteProduct = (id) => {
+    const itemsBeforeDelete = [...items];
+    const newItems = items.filter((item) => item.id !== id);
+    setItems(newItems);
+    return itemsBeforeDelete;
+  };
+
+  const actionRollback = (itemsBeforeDelete) => {
+    setItems(itemsBeforeDelete);
+  };
+
+
+  const handleEditProduct = (editedItem) => {
+    const itemsBeforeEdit = [...items];
+    const newItems = items.map(item => {
+      if(item.id === editedItem.id){
+        return {
+          ...item,
+          ...editedItem
+        }
+      } else {
+        return item;
+      }
+      }
+    )
+    setItems(newItems);
+    return itemsBeforeEdit;
+  }
+
   return (
     <div>
       <NavBar items={filterdItems} />
+      <ToastContainer />
       <Routes>
+        <Route
+          path="/admin"
+          element={
+            <Admin
+              items={items}
+              categories={categories}
+              handleDeleteProduct={handleDeleteProduct}
+              actionRollback={actionRollback}
+              handleEditProduct={handleEditProduct}
+              handleAddProduct={handleAddProduct}
+            />
+          }
+        />
         <Route
           path="/"
           element={
@@ -107,7 +160,6 @@ export default function App() {
             />
           }
         />
-
         <Route path="/about" element={<About />} />
         <Route
           path="/cartCheck"
